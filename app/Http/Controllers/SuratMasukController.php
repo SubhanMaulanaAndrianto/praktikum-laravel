@@ -2,18 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class SuratMasukController extends Controller
 {
-    public function index() {
-        //return 'Halaman surat masuk dari controller';
-        return view('surat-masuk.index');
+    private function dataSurat()
+    {
+        return [
+            1 => ['id' => 1, 'nomor_surat' => '001/FT/X/2026', 'tanggal' => '13-10-2026',
+                  'pengirim' => 'Fakultas Teknik', 'perihal' => 'Undangan Rapat'],
+            2 => ['id' => 2, 'nomor_surat' => '002/BAA/X/2026', 'tanggal' => '14-10-2026',
+                  'pengirim' => 'BAA', 'perihal' => 'Edaran Akademik'],
+            3 => ['id' => 3, 'nomor_surat' => '003/LPM/X/2026', 'tanggal' => '18-10-2026',
+                  'pengirim' => 'LPM', 'perihal' => 'Sosialisasi Pedoman'],
+        ];
     }
 
-    public function show($id) {
-        return 'Detail Surat Masuk Dengan ID:' .$id;
+    public function index()
+    {
+        $surat = $this->dataSurat();
+        return view('surat-masuk.index', compact('surat'));
+    }
+
+    public function show($id)
+    {
+        $suratShow = $this->dataSurat()[$id] ?? null;
+        return view('surat-masuk.show', compact('suratShow'));
     }
 }
-//mencari projek sistem informasi yang di pandu oleh laravel kemudian
-//dipelajari dicari di pustaka koding jika tidak , cari yang lain

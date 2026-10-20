@@ -1,13 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout.app')
 
-    <h1>Halaman ini menampilkan data surat masuk.</h1>
-    
-</body>
-</html>
+@section('title', 'Surat Masuk')
+
+@section('content')
+
+    <h1>Halaman Surat Masuk</h1>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>No Urut</th>
+                <th>Nomor Surat</th>
+                <th>Tanggal</th>
+                <th>Pengirim</th>
+                <th>Perihal</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($surat as $s)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $s['nomor_surat'] }}</td>
+                    <td>{{ $s['tanggal'] }}</td>
+                    <td>{{ $s['pengirim'] }}</td>
+                    <td>{{ $s['perihal'] }}</td>
+                    <td>
+                        <a href="{{ route('surat-masuk.show', $s['id']) }}">Detail</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+@endsection
