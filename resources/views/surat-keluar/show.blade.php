@@ -11,6 +11,7 @@
         <p><strong>Tanggal:</strong> {{ $suratShow['tanggal'] }}</p>
         <p><strong>Tujuan:</strong> {{ $suratShow['tujuan'] }}</p>
         <p><strong>Perihal:</strong> {{ $suratShow['perihal'] }}</p>
+        <p><strong>Keterangan:</strong> {{ $suratShow['keterangan'] }}</p>
     @else
         <p>Data surat tidak ditemukan.</p>
     @endif

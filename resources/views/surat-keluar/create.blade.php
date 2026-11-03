@@ -22,6 +22,9 @@
     <label>Perihal</label><br>
     <input type="text" name="perihal"><br><br>
 
+    <label>Keterangan</label><br>
+    <textarea name="keterangan"></textarea><br><br>
+
     <button type="submit">Simpan</button>
 </form>
 

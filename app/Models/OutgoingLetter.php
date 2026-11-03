@@ -11,5 +11,6 @@ class OutgoingLetter extends Model
         'tanggal',
         'tujuan',
         'perihal',
+        'keterangan',
     ];
 }

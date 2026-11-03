@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('title', 'Edit Surat Keluar')
@@ -22,6 +21,9 @@
 
     <label>Perihal</label><br>
     <input type="text" name="perihal" value="{{ $surat->perihal }}"><br><br>
+
+    <label>Keterangan</label><br>
+    <textarea name="keterangan">{{ $surat->keterangan }}</textarea><br><br>
 
     <button type="submit">Update</button>
 </form>

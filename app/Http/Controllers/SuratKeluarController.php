@@ -25,6 +25,7 @@ class SuratKeluarController extends Controller
             'tanggal' => 'required|date',
             'tujuan' => 'required',
             'perihal' => 'required',
+            'keterangan' => 'nullable',
         ]);
 
         OutgoingLetter::create($request->all());
@@ -51,6 +52,7 @@ class SuratKeluarController extends Controller
             'tanggal' => 'required|date',
             'tujuan' => 'required',
             'perihal' => 'required',
+            'keterangan' => 'nullable',
         ]);
 
         $surat = OutgoingLetter::findOrFail($id);
