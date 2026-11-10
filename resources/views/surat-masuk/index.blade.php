@@ -30,9 +30,17 @@
                 <td>{{ $surat->perihal }}</td>
                 <td>
     <a href="{{ route('surat-masuk.show', $surat->id) }}">Detail</a>
+              <a href="{{ route('surat-masuk.show', $surat->id) }}"
+   class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+    Detail
+</a>
 
+<a href="{{ route('surat-masuk.edit', $surat->id) }}"
+   class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+    Edit
+</a>  
     @can('manage-letters')
-        | <a href="{{ route('surat-masuk.edit', $surat->id) }}">Edit</a>
+        | <a href="{{ route('surat-masuk.edit', $surat->id) }}"></a>
 
         | <form action="{{ route('surat-masuk.destroy', $surat->id) }}"
                 method="POST" style="display:inline;">

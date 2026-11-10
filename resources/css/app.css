@@ -1,3 +1,4 @@
+
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -5,7 +6,513 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/* KONFIGURASI TAILWIND */
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   DESAIN SIM-SURAT
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background-color: #172554;
+    color: white;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* NAVIGASI */
+nav {
+    background-color: white;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 9px 15px;
+    margin-right: 5px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+/* KONTEN */
+main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #172554;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+/* TABEL */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+thead {
+    background-color: #172554;
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:hover {
+    background-color: #eff6ff;
+}
+
+/* TOMBOL */
+button {
+    background-color: #2563eb;
+    color: white;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* FORM */
+label {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 11px 13px;
+    margin-bottom: 17px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* FOOTER */
+footer {
+    background: white;
+    color: #64748b;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+}
+
+a[href*="/surat-masuk/create"],
+a[href*="/surat-keluar/create"] {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+a[href*="/surat-masuk/create"]:hover,
+a[href*="/surat-keluar/create"]:hover {
+    background-color: #1e40af;
+}
+
+
+/* ==================================
+   MANAGE YOUR DIGITAL EMPIRE
+   SIM-SURAT LOGIN
+================================== */
+
+.empire-login {
+    min-height: 100vh;
+    background: #f8fafc;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.empire-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+}
+
+/* LEFT PANEL */
+
+.empire-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px 65px;
+    color: white;
+    background: linear-gradient(145deg, #10172f, #172554 65%, #312e81);
+}
+
+.empire-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.brand-logo {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    font-size: 23px;
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+    margin: 65px 0;
+}
+
+.hero-label {
+    display: inline-block;
+    color: #a5b4fc;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    display: block;
+    background: linear-gradient(90deg, #818cf8, #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-content p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 430px;
+}
+
+.hero-features {
+    margin-top: 35px;
+    display: grid;
+    gap: 14px;
+    color: #e2e8f0;
+    font-size: 13px;
+}
+
+.hero-footer {
+    position: relative;
+    z-index: 2;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* DECORATION */
+
+.hero-circle {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 450px;
+    height: 450px;
+    right: -180px;
+    top: 10%;
+}
+
+.circle-two {
+    width: 300px;
+    height: 300px;
+    right: -100px;
+    top: 20%;
+    background: rgba(129,140,248,0.04);
+}
+
+/* RIGHT PANEL */
+
+.empire-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px;
+    background: #f8fafc;
+}
+
+.empire-form-card {
+    width: 100%;
+    max-width: 430px;
+}
+
+.form-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 25px;
+    margin-bottom: 28px;
+}
+
+.form-welcome {
+    color: #6366f1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.empire-form-card h2 {
+    color: #172554;
+    font-size: 29px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.form-description {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+/* INPUT */
+
+.empire-field {
+    margin-bottom: 23px;
+}
+
+.empire-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 9px;
+}
+
+.empire-field input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.25s;
+    margin-bottom: 0;
+}
+
+.empire-field input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99,102,241,0.10);
+}
+
+/* BUTTON */
+
+.empire-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(100deg, #4338ca, #7c3aed);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.empire-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(79,70,229,0.22);
+}
+
+.empire-button span {
+    font-size: 19px;
+}
+
+/* ERROR */
+
+.empire-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    border-radius: 9px;
+    padding: 13px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.field-error {
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+/* FOOTER */
+
+.form-footer {
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .empire-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .empire-hero {
+        min-height: 400px;
+        padding: 35px 30px;
+    }
+
+    .hero-content {
+        margin: 45px 0;
+    }
+
+    .empire-form-section {
+        padding: 45px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .empire-hero {
+        min-height: 350px;
+        padding: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .empire-form-section {
+        padding: 35px 20px;
+    }
+
+    .empire-form-card h2 {
+        font-size: 24px;
+    }
 }
